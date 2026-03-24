@@ -1,0 +1,21 @@
+<odoo>
+
+    <!-- ROOT -->
+    <menuitem id="menu_lazada_root"
+              name="Lazada"
+              sequence="10"/>
+
+    <!-- ACTION -->
+    <record id="action_lazada_order" model="ir.actions.act_window">
+        <field name="name">Lazada Orders</field>
+        <field name="res_model">lazada.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_lazada_order"
+              name="Orders"
+              parent="menu_lazada_root"
+              action="action_lazada_order"/>
+
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_shopee_order_form" model="ir.ui.view">
+        <field name="name">shopee.order.form</field>
+        <field name="model">shopee.order</field>
+        <field name="arch" type="xml">
+            <form>
+
+
+                <header>
+                    <button name="action_test_api"
+                            string="Test Shopee API"
+                            type="object"
+                            class="btn-primary"/>
+                </header>
+
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="view_shopee_order_tree" model="ir.ui.view">
+        <field name="name">shopee.order.list</field>
+        <field name="model">shopee.order</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_shopee_order" model="ir.actions.act_window">
+        <field name="name">Shopee Orders</field>
+        <field name="res_model">shopee.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_shopee_root" name="Shopee"/>
+    <menuitem id="menu_shopee_order"
+              name="Orders"
+              parent="menu_shopee_root"
+              action="action_shopee_order"/>
+</odoo>

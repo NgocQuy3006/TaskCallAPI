@@ -1,0 +1,42 @@
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_lazada_order_list" model="ir.ui.view">
+        <field name="name">lazada.order.list</field>
+        <field name="model">lazada.order</field>
+        <field name="arch" type="xml">
+            <list>
+                <!-- HEADER BUTTON TEST API -->
+                <header>
+                    <button name="action_test_lazada_api"
+                            string="Test API"
+                            type="object"
+                            class="oe_highlight"/>
+                </header>
+
+                <!-- FIELDS -->
+                <field name="name"/>
+                <field name="customer_name"/>
+                <field name="total_amount"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_lazada_order_form" model="ir.ui.view">
+        <field name="name">lazada.order.form</field>
+        <field name="model">lazada.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_name"/>
+                        <field name="total_amount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

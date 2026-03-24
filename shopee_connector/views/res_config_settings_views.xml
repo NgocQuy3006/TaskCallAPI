@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_res_config_settings_shopee" model="ir.ui.view">
+        <field name="name">res.config.settings.shopee</field>
+        <field name="model">res.config.settings</field>
+
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//form" position="inside">
+
+                <group string="Shopee Integration">
+
+                    <field name="shopee_partner_id"/>
+                    <field name="shopee_partner_key"/>
+                    <field name="shopee_shop_id"/>
+                    <field name="shopee_access_token"/>
+
+                </group>
+
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
