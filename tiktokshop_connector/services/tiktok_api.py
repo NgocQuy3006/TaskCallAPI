@@ -21,7 +21,7 @@ class TikTokAPI:
         sign_str = f"{path}{param_str}"
 
         return hmac.new(
-            str(self.app_secret).encode(),   # 👈 fix lỗi None/bool
+            str(self.app_secret).encode(),   
             sign_str.encode(),
             hashlib.sha256
         ).hexdigest()
