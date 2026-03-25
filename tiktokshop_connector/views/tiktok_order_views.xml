@@ -1,0 +1,38 @@
+<odoo>
+
+    <record id="view_tiktok_order_list" model="ir.ui.view">
+        <field name="name">tiktok.order.list</field>
+        <field name="model">tiktok.order</field>
+        <field name="arch" type="xml">
+            <list>
+                <header>
+                    <button name="action_sync_tiktok_orders"
+                            string="Sync TikTok Orders"
+                            type="object"
+                            class="oe_highlight"/>
+                </header>
+
+                <field name="name"/>
+                <field name="customer_name"/>
+                <field name="total_amount"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_tiktok_order_form" model="ir.ui.view">
+        <field name="name">tiktok.order.form</field>
+        <field name="model">tiktok.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_name"/>
+                        <field name="total_amount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
