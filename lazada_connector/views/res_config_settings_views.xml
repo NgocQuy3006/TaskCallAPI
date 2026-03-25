@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="view_res_config_settings_lazada" model="ir.ui.view">
         <field name="name">res.config.settings.lazada</field>
         <field name="model">res.config.settings</field>
@@ -8,11 +7,12 @@
 
             <xpath expr="//form" position="inside">
                 <group string="Lazada Connector">
-                    <field name="lazada_api_key"/>
+                    <field name="lazada_app_key"/>
+                    <field name="lazada_app_secret"/>
+                    <field name="lazada_access_token"/>
                 </group>
             </xpath>
 
         </field>
     </record>
-
 </odoo>
