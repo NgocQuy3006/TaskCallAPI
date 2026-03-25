@@ -7,10 +7,10 @@
 
 
                 <header>
-                    <button name="action_test_api"
-                            string="Test Shopee API"
+                    <button name="action_sync_shopee_orders"
+                            string="Sync Shopee Orders"
                             type="object"
-                            class="btn-primary"/>
+                            class="oe_highlight"/>
                 </header>
 
                 <sheet>

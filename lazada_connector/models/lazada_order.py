@@ -13,7 +13,6 @@ class LazadaOrder(models.Model):
     customer_name = fields.Char("Customer Name")
     total_amount = fields.Float("Total Amount")
 
-
     def action_test_lazada_api(self):
         service = LazadaAPIService(self.env)
 
@@ -23,3 +22,35 @@ class LazadaOrder(models.Model):
         )
 
         _logger.info("TEST API: %s", res)
+
+
+        if not res:
+            return
+
+
+        orders = res.get('data', {}).get('orders', [])
+
+
+        for o in orders:
+            order_id = o.get('order_id')
+
+
+            if self.search([('name', '=', order_id)]):
+                continue
+
+            self.create({
+                'name': order_id,
+                'customer_name': o.get('customer_first_name'),
+                'total_amount': float(o.get('price', 0)),
+            })
+
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': 'Success',
+                'message': 'Đã sync đơn hàng!',
+                'type': 'success',
+            }
+        }

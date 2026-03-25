@@ -9,7 +9,7 @@
                 <!-- HEADER BUTTON TEST API -->
                 <header>
                     <button name="action_test_lazada_api"
-                            string="Test API"
+                            string="Sync Orders"
                             type="object"
                             class="oe_highlight"/>
                 </header>
